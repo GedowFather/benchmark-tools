@@ -24,7 +24,14 @@ TIME_LOWER_LIMIT     = 1800
 ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 JST         = timezone(timedelta(hours=+9), 'JST')
 
-IGNORE_TESTS = ['pts/perl-benchmark', 'pts/qmlbench', 'system/blender', 'system/mpv', 'pts/brl-cad', 'pts/onednn']
+IGNORE_TESTS = [
+    'pts/perl-benchmark', 'pts/qmlbench', 'system/blender', 'system/mpv',
+    'pts/brl-cad', 'pts/onednn', 'pts/blender', 'pts/build-wasmer', 'pts/intel-mlc',
+    'pts/onnx', 'pts/clickhouse', 'pts/ecp-candle', 'pts/hammerdb-mariadb',
+    'pts/spec-cpu2017', 'pts/gnupg', 'pts/perf-bench', 'pts/pgbench', 'pts/pjsip',
+    'pts/quantlib', 'pts/redis', 'pts/redshift', 'pts/renaissance', 'pts/rust-mandel', 'pts/rust-prime',
+    'pts/sockperf', 'pts/sqlite', 'pts/sqlite-speedtest',
+]
 
 #
 # filter tests
