@@ -30,7 +30,9 @@ IGNORE_TESTS = [
     'pts/onnx', 'pts/clickhouse', 'pts/ecp-candle', 'pts/hammerdb-mariadb',
     'pts/spec-cpu2017', 'pts/gnupg', 'pts/perf-bench', 'pts/pgbench', 'pts/pjsip',
     'pts/quantlib', 'pts/redis', 'pts/redshift', 'pts/renaissance', 'pts/rust-mandel', 'pts/rust-prime',
-    'pts/sockperf', 'pts/sqlite', 'pts/sqlite-speedtest', 'pts/tensorflow-lite',
+    'pts/sockperf', 'pts/sqlite', 'pts/sqlite-speedtest', 'pts/tensorflow-lite', 'pts/tnn', 'pts/toktx',
+    'pts/tungsten',
+    'system/apache', 'system/compress-zstd', 'system/gnupg', 'system/libreoffice', 'system/nginx',
 ]
 
 #
