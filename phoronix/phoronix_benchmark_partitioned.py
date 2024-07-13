@@ -37,11 +37,17 @@ if S3_PREFIX is None:
 #
 # metadata
 #
-METADATA_BASE_URL = "http://169.254.169.254/latest/meta-data"
+METADATA_BASE_URL = "http://169.254.169.254/latest"
 
-AZ_URL = "%s/placement/availability-zone" % (METADATA_BASE_URL)
-res = requests.get(AZ_URL)
-REGION = res.text[:-1]
+TOKEN_URL = "%s/api/token" % (METADATA_BASE_URL)
+headers   = {'X-aws-ec2-metadata-token-ttl-seconds': '21600'}
+res       = requests.put(TOKEN_URL, data=None, headers=headers)
+TOKEN     = res.text
+
+AZ_URL    = "%s/meta-data/placement/availability-zone" % (METADATA_BASE_URL)
+headers   = {'X-aws-ec2-metadata-token': TOKEN}
+res       = requests.get(AZ_URL, headers=headers)
+REGION    = res.text[:-1]
 
 PROFILE_INFO_URL = "%s/iam/info" % (METADATA_BASE_URL)
 res = requests.get(PROFILE_INFO_URL)
