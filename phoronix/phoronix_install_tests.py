@@ -32,7 +32,10 @@ IGNORE_TESTS = [
     'pts/quantlib', 'pts/redis', 'pts/redshift', 'pts/renaissance', 'pts/rust-mandel', 'pts/rust-prime',
     'pts/sockperf', 'pts/sqlite', 'pts/sqlite-speedtest', 'pts/tensorflow-lite', 'pts/tnn', 'pts/toktx',
     'pts/tungsten',
+    'pts/compress-pbzip2', 'pts/draco', 'pts/etcd', 'pts/faiss', 'pts/fftw', 'pts/keydb', 'pts/laghos',
+    'pts/libxsmm', 'pts/lzbench', 'pts/mkl-dnn',
     'system/apache', 'system/compress-zstd', 'system/gnupg', 'system/libreoffice', 'system/nginx',
+    'git/clickhouse',
 ]
 
 #
@@ -43,6 +46,7 @@ info = json.loads(f.read())
 f.close()
 
 for name in IGNORE_TESTS:
+        if name not in info: continue
         del info[name]
 
 install_tests = []
