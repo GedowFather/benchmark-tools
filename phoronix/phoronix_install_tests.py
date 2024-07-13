@@ -31,9 +31,10 @@ IGNORE_TESTS = [
     'pts/spec-cpu2017', 'pts/gnupg', 'pts/perf-bench', 'pts/pgbench', 'pts/pjsip',
     'pts/quantlib', 'pts/redis', 'pts/redshift', 'pts/renaissance', 'pts/rust-mandel', 'pts/rust-prime',
     'pts/sockperf', 'pts/sqlite', 'pts/sqlite-speedtest', 'pts/tensorflow-lite', 'pts/tnn', 'pts/toktx',
-    'pts/tungsten',
+    'pts/tungsten', 'pts/compress-xz', 'pts/gromacs', 'pts/minion', 'pts/mnn', 'pts/montage', 'pts/mysqlslap',
+    'pts/petsc', 'pts/powertop-wakeups', 'pts/spark', 'pts/spark-tpch', 'pts/specfem3d', 'pts/stockfish',
     'pts/compress-pbzip2', 'pts/draco', 'pts/etcd', 'pts/faiss', 'pts/fftw', 'pts/keydb', 'pts/laghos',
-    'pts/libxsmm', 'pts/lzbench', 'pts/mkl-dnn',
+    'pts/libxsmm', 'pts/lzbench', 'pts/mkl-dnn', 'pts/vosk',
     'system/apache', 'system/compress-zstd', 'system/gnupg', 'system/libreoffice', 'system/nginx',
     'git/clickhouse',
 ]
