@@ -49,21 +49,21 @@ headers   = {'X-aws-ec2-metadata-token': TOKEN}
 res       = requests.get(AZ_URL, headers=headers)
 REGION    = res.text[:-1]
 
-PROFILE_INFO_URL = "%s/iam/info" % (METADATA_BASE_URL)
-res = requests.get(PROFILE_INFO_URL)
+PROFILE_INFO_URL = "%s/meta-data/iam/info" % (METADATA_BASE_URL)
+res = requests.get(PROFILE_INFO_URL, headers=headers)
 PROFILE_INFO = json.loads(res.text)
 PROFILE_ARN  = PROFILE_INFO['InstanceProfileArn']
 
-MACS_URL = "%s/network/interfaces/macs" % (METADATA_BASE_URL)
-res = requests.get(MACS_URL)
+MACS_URL = "%s/meta-data/network/interfaces/macs" % (METADATA_BASE_URL)
+res = requests.get(MACS_URL, headers=headers)
 MAC = res.text
 MAC_URL = "%s/%s" % (MACS_URL, MAC)
 SUBNET_ID_URL = "%ssubnet-id" % (MAC_URL)
-res       = requests.get(SUBNET_ID_URL)
+res       = requests.get(SUBNET_ID_URL, headers=headers)
 SUBNET_ID = res.text
 
 SECURITY_GROUP_IDS_URL = "%ssecurity-group-ids" % (MAC_URL)
-res = requests.get(SECURITY_GROUP_IDS_URL)
+res = requests.get(SECURITY_GROUP_IDS_URL, headers=headers)
 SECURITY_GROUP_IDS = res.text.split("\n")
 
 #
